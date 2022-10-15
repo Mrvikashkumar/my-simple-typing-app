@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Typing Application</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/all.css">
+  <!-- <script src="js/paragraph.js" defer></script> -->
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <div class="rules-container">
+    <div class="game-rules">
+      <h1>Our game rules</h1>
+      <ol type="alphabet">
+        <li>Your can't press backspace and enter key. If you press backspace and enter key then game will be end.</li>
+        <li>We show you score in cpm(character per minutes).</li>
+        <li>And we show the accuracy on the basis of how much you typed correct character and how much length of this paragraph</li>
+      </ol>
+      <button onclick="closeRulesContainer()">Okay!</button>
+    </div>
+  </div>
+
+
+  <div class="popup-container">
+    <div class="popup">
+      <div class="thank-message">Thanks Message!</div>
+      <div class="MyTime"><span class="myMinute">00</span> : <span class="mySecond">00</span></div>
+      <div class="my-result">
+        <div class="tc">TC: <span></span></div>
+        <div class="ttc">TTC: <span></span></div>
+        <div class="tctc">TCTC: <span></span></div>
+        <div class="titc">TITC: <span></span></div>
+        <div class="cpm">CPM: <span></span></div>
+        <div class="acc">ACC: <span></span></div>
+      </div>
+      <div class="my-btn">
+        <button id="thankYou">Thank you</button>
+        <button id="closePopup">Close</button>
+        <button id="playAgain">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- popup 2 -->
+  <div class="popup2 popup">
+    <p>What do you want?</p>
+    <div class="popup2-btn">
+      <button id="exit" onclick="exit()">Exit</button>
+      <button id="playAgain2">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Fixed button -->
+  <button id="popupBtn"><i class="fa fa-angle-left"></i></button>
+
+  <div class="score-container">
+    <div class="show-score">
+      <div class="score cpm-score">
+        <span class="score-title">CPM</span>
+        <span class="initial-score">0</span>
+        <div class="para-meter-container">
+          <div class="para-meter para-meter-cpm"><span></span></div>
+        </div>
+        <span class="final-score">600</span>
+        <span class="score-result" id="score-result-cpm">100%</span>
+      </div>
+      <div class="score wpm-score" style="display: none;">
+        <span class="score-title">WPM</span>
+        <span class="initial-score">0</span>
+        <div class="para-meter-container">
+          <div class="para-meter"></div>
+        </div>
+        <span class="final-score">120</span>
+        <span class="score-result" id="score-result-wpm">100%</span>
+      </div>
+      <div class="score accurate">
+        <span class="score-title">Accuracy</span>
+        <span class="initial-score">0%</span>
+        <div class="para-meter-container">
+          <div class="para-meter para-meter-acc"></div>
+        </div>
+        <span class="final-score">100%</span>
+        <span class="score-result" id="score-result-acc">100%</span>
+      </div>
+    </div>
+    <button class="show-score-btn">
+      <i class="fa fa-angle-down"></i>
+    </button>
+  </div>
+  <div class="main-container">
+    <div class="title">
+      <!-- <p>learn typing</p> -->
+      <p>typing game</p>
+    </div>
+    <div class="container">
+      <div class="dummy-para">
+        <div class="textarea" id="dummyPara"></div>
+      </div>
+      <div class="typing-area">
+        <textarea class="textarea" name="typingArea" id="typingArea" placeholder="type here..."></textarea>
+        <div class="blankSpace">
+          <div class="more-info">
+            <p title="Total characters">TC: <span id="totalChar"></span></p>
+            <p title="Total typed character">TTC: <span id="totalTypedChar"></span></p>
+            <p title="Total correct typed character">TCTC: <span id="totalCorrectTypedChar"></span></p>
+            <p title="Total incorrect typed character">TITC: <span id="totalIncorrectTypedChar"></span></p>
+          </div>
+          <button type="button">
+            <i class="fa fa-angle-up"></i>
+            <!-- <span>showMoreInfo</span> -->
+          </button>
+        </div>
+      </div>
+      <div class="show-result-area">
+        <h2>YOUR RESULT...</h2>
+        <div class="statics-result">
+          <div class="time-left"><span>Time: </span><span id="timeMinLeft">00</span>:<span id="timeSecLeft">00</span>
+          </div>
+          <div class="mistakes"><span>Mistakes:</span><span id="mistakes">00</span></div>
+          <div class="wpm"><span>WPM:</span><span>00</span></div>
+          <div class="cpm"><span>cpm:</span><span id="cpm">00</span></div>
+        </div>
+        <div class="btns">
+          <button type="button" id="start">Start</button>
+          <button type="button" id="pause">Stop</button>
+          <button type="button" id="tryAgain">Try Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="author">
+    <i>Develope by: -<b>Vikash Kumar</b></i>
+  </div>
+</body>
+
+</html>
